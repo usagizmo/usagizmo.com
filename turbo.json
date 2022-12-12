@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
+    },
+    "mockup#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/styles.css"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "outputs": []
+    },
+    "test": {
+      "outputs": []
+    },
+    "mockup#test": {
+      "outputs": ["tests/external-links.txt"]
+    }
+  }
+}
