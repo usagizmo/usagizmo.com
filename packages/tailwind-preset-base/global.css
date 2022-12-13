@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 252 252 252;
+    --color-divider: 217 217 217;
+    --color-text: 5 5 5;
+    --color-subtext: 50 50 50;
+    --color-text-link: 153 153 153;
+  }
+  [data-theme='dark'] {
+    --color-divider: 77 77 77;
+    --color-background: 38 38 38;
+    --color-text: 255 255 255;
+    --color-subtext: 205 205 205;
+    --color-text-link: 153 153 153;
+  }
+}

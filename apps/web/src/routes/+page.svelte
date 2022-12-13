@@ -1,31 +1,79 @@
 <script lang="ts">
-  import { isLoggedIn } from '$lib/nhost';
-  import { SectionFrame } from 'ui';
-  import LoginMessage from './LoginMessage.svelte';
-  import Comments from './Comments.svelte';
-  import CommentForm from './CommentForm.svelte';
-  import { GQL_GetCommentsSubscription } from '$houdini';
+  import { TextLink, H2, H3, Ul, Li, InlineUl, InlineLi } from 'ui';
+  import type { PageData } from './$houdini';
+  import Likes from './Likes.svelte';
 
-  GQL_GetCommentsSubscription.listen();
+  export let data: PageData;
+  $: ({ GetLikeListByCategory } = data);
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
-  {#if !$isLoggedIn}
-    <LoginMessage />
-  {:else}
-    <CommentForm />
-  {/if}
+  <div class="pb-[14px]">
+    <h1 class="text-4xl font-bold">usagizmo</h1>
 
-  <SectionFrame noPad="y">
-    <div class="pb-[14px]">
-      <!-- attention -->
-      <div class="flex items-center justify-center border-b border-slate-200 pt-2.5 pb-2">
-        <p class="text-sm text-zinc-500">Comments will be deleted as appropriate.</p>
-      </div>
+    <section class="mt-12">
+      <H2>Profile</H2>
+      <p><strong>Web Engineer</strong></p>
+      <p class="text-subtext">
+        After working as a full stack engineer, I settled on a front-end engineer.
+      </p>
+    </section>
 
-      <div>
-        <Comments data={$GQL_GetCommentsSubscription?.comments ?? []} />
-      </div>
-    </div>
-  </SectionFrame>
+    <section class="mt-12">
+      <H3>Loves</H3>
+      <InlineUl>
+        <InlineLi><TextLink href="https://svelte.dev/">Svelte</TextLink></InlineLi>
+        <InlineLi><TextLink href="https://obsidian.md/">Obsidian</TextLink></InlineLi>
+      </InlineUl>
+    </section>
+
+    <section class="mt-12">
+      <H3>Works</H3>
+      <Ul>
+        <Li>
+          <strong
+            ><TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink
+            ></strong
+          >:
+          <span class="max-md:ml-4 max-md:block">This site</span>
+        </Li>
+        <Li>
+          <strong
+            ><TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink
+            ></strong
+          >:
+          <span class="max-md:ml-4 max-md:block">Monorepo template for Web Development</span>
+        </Li>
+      </Ul>
+    </section>
+
+    <section class="mt-12">
+      <H3>Links</H3>
+
+      <p>
+        <strong>Twitter</strong>: <TextLink href="https://twitter.com/usagizmo">@usagizmo</TextLink>
+      </p>
+
+      <div class="h-1" />
+
+      <InlineUl>
+        <InlineLi>
+          <TextLink href="https://github.com/usagizmo">GitHub</TextLink>
+        </InlineLi>
+        <InlineLi>
+          <TextLink href="https://zenn.dev/">Zenn</TextLink>
+        </InlineLi>
+        <InlineLi>
+          <TextLink href="https://qiita.com/usagizmo">Qiita</TextLink>
+        </InlineLi>
+      </InlineUl>
+    </section>
+
+    <section class="mt-12">
+      <H2>Uses</H2>
+      {#if $GetLikeListByCategory.data}
+        <Likes data={$GetLikeListByCategory.data} />
+      {/if}
+    </section>
+  </div>
 </div>

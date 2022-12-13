@@ -1,0 +1,5 @@
+query GetLikeListByCategory {
+  like_categories(order_by: { order: asc }) {
+    ...LikesList
+  }
+}
