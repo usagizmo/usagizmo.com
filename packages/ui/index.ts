@@ -1,1 +1,1 @@
-export { default as SectionFrame } from './components/SectionFrame.svelte';
+export { default as TextLink } from './components/TextLink.svelte';

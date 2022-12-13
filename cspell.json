@@ -29,6 +29,7 @@
     "noto",
     "pathtest",
     "pnpm",
+    "qiita",
     "setapp",
     "subresource",
     "sveltejs",
@@ -40,6 +41,7 @@
     "usagizmo",
     "vite",
     "webhint",
-    "yakuhanjp"
+    "yakuhanjp",
+    "zenn"
   ]
 }

@@ -7,11 +7,12 @@
   let likesListKeys = ['devices', 'apps', 'setapp', 'vsCodeExtensions'] as const;
 </script>
 
-<h2>Likes</h2>
-
-{#each likesListKeys as key}
-  {@const likesList = data[key]}
-  {#if likesList}
-    <LikesList {likesList} />
-  {/if}
-{/each}
+<section>
+  <h2>Likes</h2>
+  {#each likesListKeys as key}
+    {@const likesList = data[key]}
+    {#if likesList}
+      <LikesList {likesList} />
+    {/if}
+  {/each}
+</section>

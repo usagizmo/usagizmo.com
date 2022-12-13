@@ -1,5 +1,6 @@
 <script lang="ts">
   import { fragment, graphql, type LikeItem } from '$houdini';
+  import TextLink from 'ui/components/TextLink.svelte';
 
   export let likeItem: LikeItem;
 
@@ -16,5 +17,5 @@
 </script>
 
 <li>
-  <a href={$data.link} target="_blank" rel="noopener noreferrer">{$data.name}</a>
+  <TextLink href={$data.link}>{$data.name}</TextLink>
 </li>
