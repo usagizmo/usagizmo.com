@@ -20,10 +20,7 @@ Monorepo template for creating a web application.
 
 - [`nhost`](./apps/nhost/)  
   Local environment test server and production [Nhost](https://nhost.io/) migration.
-- [`mockup`](./apps/mockup/) [[Demo](https://webapp-template-mockup.usagizmo.com/)]  
-  A starting point for building a static site.  
-  [Tailwind CSS](https://tailwindcss.com/) + Vanilla JS + [Vitest](https://vitest.dev/) (Check links + file names)
-- [`web`](./apps/web/) [[Demo](https://webapp-template.usagizmo.com/)]  
+- [`web`](./apps/web/)  
   A starting point for building Svelte application.  
   [SvelteKit](https://kit.svelte.dev/) (w/ [Tailwind CSS](https://tailwindcss.com/) + [TypeScript](https://www.typescriptlang.org/))  
   [Nhost](https://nhost.io/) (w/ [Houdini](https://www.houdinigraphql.com/))
@@ -52,8 +49,6 @@ Monorepo template for creating a web application.
 - Change frontend framework (`apps/web`): [Next.js](https://nextjs.org/) → [SvelteKit](https://kit.svelte.jp/)
 - Change repository name: `nextjs-template` → `webapp-template`
 - [ ] `apps/storybook`: in progress
-- [ ] `apps/mockup`: in progress
-- [ ] `apps/mockup`/`apps/web`: add meta information
 
 ### v0.23.0
 
@@ -81,8 +76,6 @@ pnpm format  # eslint --fix + prettier --write
   - `8025`: MailHog
   - `9695`: Hasura Console
 - `3000`: `apps/web/` - SvelteKit application
-- `8000`: `apps/mockup/` - Static site
-- `49160`: `apps/mockup/` - Express server
 
 ## Registering environment variables for GitHub / Vercel
 

@@ -5,10 +5,6 @@
       "dependsOn": ["^build"],
       "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
-    "mockup#build": {
-      "dependsOn": ["^build"],
-      "outputs": ["public/styles.css"]
-    },
     "dev": {
       "cache": false
     },
@@ -17,9 +13,6 @@
     },
     "test": {
       "outputs": []
-    },
-    "mockup#test": {
-      "outputs": ["tests/external-links.txt"]
     }
   }
 }
