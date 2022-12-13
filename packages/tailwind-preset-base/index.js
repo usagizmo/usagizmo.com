@@ -10,6 +10,14 @@ module.exports = {
         keycode: 'Lucida Grande',
       },
     },
+    colors: {
+      background: 'rgb(var(--color-background) / <alpha-value>)',
+      divider: 'rgb(var(--color-divider) / <alpha-value>)',
+      text: 'rgb(var(--color-text) / <alpha-value>)',
+      subtext: 'rgb(var(--color-subtext) / <alpha-value>)',
+      'text-link': 'rgb(var(--color-text-link) / <alpha-value>)',
+    },
   },
+
   plugins: [],
 };
