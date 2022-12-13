@@ -8,7 +8,6 @@
     likeItem,
     graphql`
       fragment LikeItem on like_items {
-        id
         name
         link
       }

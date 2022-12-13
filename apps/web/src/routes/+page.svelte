@@ -4,7 +4,7 @@
   import Likes from './Likes.svelte';
 
   export let data: PageData;
-  $: ({ GetLikeItemsByCategory } = data);
+  $: ({ GetLikeListByCategory } = data);
 </script>
 
 <div class="mx-auto max-w-[792px] space-y-5">
@@ -31,7 +31,10 @@
       <H3>Works</H3>
       <Ul>
         <Li>
-          <strong><TextLink href="https://usagizmo.com/">usagizmo.com</TextLink></strong>:
+          <strong
+            ><TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink
+            ></strong
+          >:
           <span class="max-md:ml-4 max-md:block">This site</span>
         </Li>
         <Li>
@@ -68,8 +71,8 @@
 
     <section class="mt-12">
       <H2>Uses</H2>
-      {#if $GetLikeItemsByCategory.data}
-        <Likes data={$GetLikeItemsByCategory.data} />
+      {#if $GetLikeListByCategory.data}
+        <Likes data={$GetLikeListByCategory.data} />
       {/if}
     </section>
   </div>

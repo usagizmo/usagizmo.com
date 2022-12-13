@@ -1,14 +1,11 @@
 <script lang="ts">
-  import type { GetLikeItemsByCategory$result } from '$houdini';
+  import type { GetLikeListByCategory$result } from '$houdini';
   import LikesList from './LikesList.svelte';
 
-  export let data: GetLikeItemsByCategory$result;
-
-  let likesListKeys = ['devices', 'apps', 'setapp', 'vsCodeExtensions'] as const;
+  export let data: GetLikeListByCategory$result;
 </script>
 
-{#each likesListKeys as key}
-  {@const likesList = data[key]}
+{#each data.like_categories as likesList}
   {#if likesList}
     <LikesList {likesList} />
   {/if}
