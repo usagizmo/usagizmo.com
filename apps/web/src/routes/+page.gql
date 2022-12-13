@@ -1,0 +1,14 @@
+query GetLikeItemsByCategory {
+  apps: like_categories_by_pk(id: "apps") {
+    ...LikesList
+  }
+  devices: like_categories_by_pk(id: "devices") {
+    ...LikesList
+  }
+  setapp: like_categories_by_pk(id: "setapp") {
+    ...LikesList
+  }
+  vsCodeExtensions: like_categories_by_pk(id: "vs-code-extensions") {
+    ...LikesList
+  }
+}
