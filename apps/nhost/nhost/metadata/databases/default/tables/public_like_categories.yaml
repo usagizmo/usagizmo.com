@@ -1,0 +1,30 @@
+table:
+  name: like_categories
+  schema: public
+configuration:
+  column_config:
+    created_at:
+      custom_name: createdAt
+    updated_at:
+      custom_name: updatedAt
+  custom_column_names:
+    created_at: createdAt
+    updated_at: updatedAt
+  custom_root_fields: {}
+array_relationships:
+  - name: likeItems
+    using:
+      foreign_key_constraint_on:
+        column: like_category_id
+        table:
+          name: like_items
+          schema: public
+select_permissions:
+  - role: public
+    permission:
+      columns:
+        - id
+        - created_at
+        - updated_at
+        - name
+      filter: {}
