@@ -1,8 +1,15 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
+    "web#generate": {
+      "outputs": ["schema.graphql"]
+    },
     "build": {
       "dependsOn": ["^build"],
+      "outputs": [".svelte-kit/**", ".vercel/**"]
+    },
+    "web#build": {
+      "dependsOn": ["^build", "generate"],
       "outputs": [".svelte-kit/**", ".vercel/**", "$houdini/**", "schema.graphql"]
     },
     "dev": {
@@ -12,6 +19,7 @@
       "outputs": []
     },
     "test": {
+      "dependsOn": ["build"],
       "outputs": []
     }
   }
