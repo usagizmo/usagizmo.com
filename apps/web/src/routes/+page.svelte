@@ -60,7 +60,7 @@
         <TextLink href="https://github.com/usagizmo">GitHub</TextLink>
       </InlineLi>
       <InlineLi>
-        <TextLink href="https://zenn.dev/">Zenn</TextLink>
+        <TextLink href="https://zenn.dev/usagizmo">Zenn</TextLink>
       </InlineLi>
       <InlineLi>
         <TextLink href="https://qiita.com/usagizmo">Qiita</TextLink>
