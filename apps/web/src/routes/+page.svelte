@@ -7,6 +7,13 @@
 
   export let data: PageData;
   $: ({ RootQuery } = data);
+
+  $: keyValue = $RootQuery.data?.keyValues?.reduce(
+    (acc, { key, value }) => Object.assign(acc, { [key]: value }),
+    {} as Record<string, string>
+  );
+  $: profileLabel = keyValue?.profileLabel;
+  $: profileText = keyValue?.profileText;
 </script>
 
 <div class="mx-auto max-w-[792px]">
@@ -14,10 +21,12 @@
 
   <section class="mt-12">
     <H2>Profile</H2>
-    <p class="mb-0.5"><strong>Web Engineer</strong></p>
-    <p class="text-subtext">
-      After working as a full stack engineer, I settled on a front-end engineer.
-    </p>
+    {#if profileLabel}
+      <p class="mb-0.5"><strong>{profileLabel}</strong></p>
+    {/if}
+    {#if profileText}
+      <p class="text-subtext">{profileText}</p>
+    {/if}
   </section>
 
   <section class="mt-12">

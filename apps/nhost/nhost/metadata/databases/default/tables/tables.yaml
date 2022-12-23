@@ -6,6 +6,7 @@
 - "!include auth_user_roles.yaml"
 - "!include auth_user_security_keys.yaml"
 - "!include auth_users.yaml"
+- "!include public_key_values.yaml"
 - "!include public_like_categories.yaml"
 - "!include public_like_items.yaml"
 - "!include public_link_type.yaml"

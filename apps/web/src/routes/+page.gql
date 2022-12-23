@@ -1,4 +1,8 @@
 query RootQuery {
+  keyValues: key_values {
+    key
+    value
+  }
   loves: links(order_by: { order: asc }, where: { type: { _eq: love } }) {
     ...Link
   }
