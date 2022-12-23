@@ -8,5 +8,7 @@
 - "!include auth_users.yaml"
 - "!include public_like_categories.yaml"
 - "!include public_like_items.yaml"
+- "!include public_link_type.yaml"
+- "!include public_links.yaml"
 - "!include storage_buckets.yaml"
 - "!include storage_files.yaml"
