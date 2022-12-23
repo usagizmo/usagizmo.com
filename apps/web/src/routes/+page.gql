@@ -1,5 +1,14 @@
-query GetLikeListByCategory {
-  like_categories(order_by: { order: asc }) {
+query RootQuery {
+  loves: links(order_by: { order: asc }, where: { type: { _eq: love } }) {
+    ...Link
+  }
+  works: links(order_by: { order: asc }, where: { type: { _eq: work } }) {
+    ...Work
+  }
+  links: links(order_by: { order: asc }, where: { type: { _eq: link } }) {
+    ...Link
+  }
+  likeCategories: like_categories(order_by: { order: asc }) {
     ...LikesList
   }
 }

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import { fragment, graphql, type LikeItem } from '$houdini';
+  import { fragment, graphql, type Like } from '$houdini';
   import { TextLink, InlineLi } from 'ui';
 
-  export let likeItem: LikeItem;
+  export let like: Like;
 
   $: data = fragment(
-    likeItem,
+    like,
     graphql`
-      fragment LikeItem on like_items {
+      fragment Like on like_items {
         name
         link
       }

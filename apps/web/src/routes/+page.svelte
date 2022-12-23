@@ -1,10 +1,12 @@
 <script lang="ts">
-  import { TextLink, H2, H3, Ul, Li, InlineUl, InlineLi } from 'ui';
+  import { TextLink, H2, H3, Ul, InlineUl } from 'ui';
   import type { PageData } from './$houdini';
-  import Likes from './Likes.svelte';
+  import Link from './Link.svelte';
+  import Work from './Work.svelte';
+  import LikesList from './LikesList.svelte';
 
   export let data: PageData;
-  $: ({ GetLikeListByCategory } = data);
+  $: ({ RootQuery } = data);
 </script>
 
 <div class="mx-auto max-w-[792px]">
@@ -21,28 +23,18 @@
   <section class="mt-12">
     <H3>Loves</H3>
     <InlineUl>
-      <InlineLi><TextLink href="https://svelte.dev/">Svelte</TextLink></InlineLi>
-      <InlineLi><TextLink href="https://obsidian.md/">Obsidian</TextLink></InlineLi>
+      {#each $RootQuery.data?.loves ?? [] as link}
+        <Link {link} />
+      {/each}
     </InlineUl>
   </section>
 
   <section class="mt-12">
     <H3>Works</H3>
     <Ul>
-      <Li>
-        <strong
-          ><TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink
-          ></strong
-        >:
-        <span class="max-md:ml-4 max-md:block">This site</span>
-      </Li>
-      <Li>
-        <strong
-          ><TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink
-          ></strong
-        >:
-        <span class="max-md:ml-4 max-md:block">Monorepo template for Web Development</span>
-      </Li>
+      {#each $RootQuery.data?.works ?? [] as work}
+        <Work {work} />
+      {/each}
     </Ul>
   </section>
 
@@ -56,22 +48,18 @@
     <div class="h-1" />
 
     <InlineUl>
-      <InlineLi>
-        <TextLink href="https://github.com/usagizmo">GitHub</TextLink>
-      </InlineLi>
-      <InlineLi>
-        <TextLink href="https://zenn.dev/usagizmo">Zenn</TextLink>
-      </InlineLi>
-      <InlineLi>
-        <TextLink href="https://qiita.com/usagizmo">Qiita</TextLink>
-      </InlineLi>
+      {#each $RootQuery.data?.links ?? [] as link}
+        <Link {link} />
+      {/each}
     </InlineUl>
   </section>
 
   <section class="mt-12">
     <H2>Uses</H2>
-    {#if $GetLikeListByCategory.data}
-      <Likes data={$GetLikeListByCategory.data} />
-    {/if}
+    {#each $RootQuery.data?.likeCategories ?? [] as likesList}
+      {#if likesList}
+        <LikesList {likesList} />
+      {/if}
+    {/each}
   </section>
 </div>
