@@ -1,18 +1,8 @@
 <script lang="ts">
-  import { fragment, graphql, type Link } from '$houdini';
   import { InlineLi, TextLink } from 'ui';
 
-  export let link: Link;
-
-  $: info = fragment(
-    link,
-    graphql`
-      fragment Link on links {
-        name
-        link
-      }
-    `
-  );
+  export let name: string;
+  export let href: string;
 </script>
 
-<InlineLi><TextLink href={$info.link}>{$info.name}</TextLink></InlineLi>
+<InlineLi><TextLink {href}>{name}</TextLink></InlineLi>
