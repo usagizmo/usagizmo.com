@@ -29,6 +29,7 @@ noblechairs
 noopener
 noreferrer
 noto
+nsimilar
 pathtest
 pixelmator
 pnpm

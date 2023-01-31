@@ -1,10 +1,10 @@
 import { graphql } from '$houdini';
-import { paramsPathToNotePath } from '$lib/utils';
+import { getMdsAuthNSimilar, paramsPathToNotePath } from '$lib/utils';
 import type { NotesInfoVariables, AfterLoadEvent } from './$houdini';
 import { ContentParser } from './ContentParser';
 
 export const _houdini_load = graphql(`
-  query NotesInfo($current: String!, $mdsLike: String!) {
+  query NotesInfo($current: String!, $mdsLike: String!, $mdsAuthNSimilar: String!) {
     current: notes_by_pk(path: $current) {
       path
       basename
@@ -12,7 +12,10 @@ export const _houdini_load = graphql(`
       createdAt
       updatedAt
     }
-    mds: notes(where: { path: { _like: $mdsLike } }, order_by: { updatedAt: desc }) {
+    mds: notes(
+      where: { path: { _like: $mdsLike, _nsimilar: $mdsAuthNSimilar } }
+      order_by: { updatedAt: desc }
+    ) {
       path
       basename
     }
@@ -21,11 +24,13 @@ export const _houdini_load = graphql(`
 
 export const _NotesInfoVariables: NotesInfoVariables = ({ params }) => {
   const current = paramsPathToNotePath(params.paths, '.md');
-  const mdsLike = params.paths ? '' : '%.md'; // only for `notes` dir
+  const mdsLike = params.paths ? '' : '%.md'; // only for `/notes` dir
+  const mdsAuthNSimilar = getMdsAuthNSimilar();
 
   return {
     current,
     mdsLike,
+    mdsAuthNSimilar,
   };
 };
 

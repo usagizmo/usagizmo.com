@@ -2,6 +2,7 @@
   import { TextLink, Ul, Li, BreadHeader } from 'ui';
   import type { PageData } from './$houdini';
   import { notePathToRoutePath, dateToISO, dateToString } from '$lib/utils';
+  import { NOTES_DIR } from '$lib/const';
 
   export let data: PageData;
   $: ({ NotesInfo, content } = data);
@@ -25,7 +26,7 @@
     <BreadHeader
       breadcrumbs={[
         { href: '/', text: '🏠' },
-        { href: '/notes', text: '📔' },
+        { href: `/${NOTES_DIR}`, text: '📔' },
       ]}
       title={title ?? 'Notes'}
     />

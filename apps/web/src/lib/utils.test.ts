@@ -6,6 +6,7 @@ import {
   paramsPathToRoutePath,
   paramsPathToNotePath,
 } from './utils';
+import { NOTES_DIR } from './const';
 
 describe('@tryErrorAlertOnNhostApi', () => {
   it('return false if it does not have `error.message`', () => {
@@ -31,12 +32,12 @@ describe('@tryErrorAlertOnNhostApi', () => {
 
 it('@notePathToRoutePath', () => {
   expect(notePathToRoutePath(`${PUBLIC_OBSIDIAN_PUBLIC_DIR}/dir1/dir2.md`)).toBe(
-    '/notes/dir1/dir2'
+    `/${NOTES_DIR}/dir1/dir2`
   );
 });
 
 it('@paramsPathToRoutePath', () => {
-  expect(paramsPathToRoutePath('dir1/dir2')).toBe('/notes/dir1/dir2');
+  expect(paramsPathToRoutePath('dir1/dir2')).toBe(`/${NOTES_DIR}/dir1/dir2`);
 });
 
 it('@paramsPathToNotePath', () => {

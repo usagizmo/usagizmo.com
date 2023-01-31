@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { NOTES_DIR } from '$lib/const';
   import { TextLink, H2, H3, Ul, InlineUl, Li } from 'ui';
   import Link from './Link.svelte';
 </script>
@@ -18,7 +19,7 @@
         After working as a full stack engineer, I settled down as a front-end engineer.
       </p>
       <p class="mt-4">
-        <TextLink href="/notes" blank={false}>📔 Notes</TextLink>
+        <TextLink href={`/${NOTES_DIR}`} blank={false}>📔 Notes</TextLink>
       </p>
     </section>
 
