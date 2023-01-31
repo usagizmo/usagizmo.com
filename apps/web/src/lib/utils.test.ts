@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { PUBLIC_OBSIDIAN_PUBLIC_DIR } from '$env/static/public';
-import { tryErrorAlertOnNhostApi, pathToAbsPath } from './utils';
+import { tryErrorAlertOnNhostApi, notePathToRoutePath, paramsPathToRoutePath } from './utils';
 
 describe('@tryErrorAlertOnNhostApi', () => {
   it('return false if it does not have `error.message`', () => {
@@ -24,8 +24,10 @@ describe('@tryErrorAlertOnNhostApi', () => {
   });
 });
 
-describe('@pathToAbsPath', () => {
-  it('return false if it does not have `error.message`', () => {
-    expect(pathToAbsPath(`${PUBLIC_OBSIDIAN_PUBLIC_DIR}/dir2`)).toBe('/notes/dir2');
-  });
+it('@notePathToRoutePath', () => {
+  expect(notePathToRoutePath(`${PUBLIC_OBSIDIAN_PUBLIC_DIR}/dir1/dir2`)).toBe('/notes/dir1/dir2');
+});
+
+it('@paramsPathToRoutePath', () => {
+  expect(paramsPathToRoutePath('dir1/dir2')).toBe('/notes/dir1/dir2');
 });

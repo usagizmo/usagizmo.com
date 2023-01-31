@@ -5,3 +5,4 @@ export { default as InlineUl } from './components/InlineUl.svelte';
 export { default as Li } from './components/Li.svelte';
 export { default as TextLink } from './components/TextLink.svelte';
 export { default as Ul } from './components/Ul.svelte';
+export { default as BreadHeader } from './components/BreadHeader.svelte';

@@ -25,6 +25,8 @@ nextjs
 nhost
 nlike
 noblechairs
+noopener
+noreferrer
 noto
 pathtest
 pixelmator
