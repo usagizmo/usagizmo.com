@@ -16,7 +16,7 @@
 {/if}
 
 {#if title}
-  <h1 class="mb-12 text-3xl font-semibold">
+  <h1 class="text-3xl font-semibold">
     {title}
   </h1>
 {/if}

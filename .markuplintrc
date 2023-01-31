@@ -12,6 +12,7 @@
     "character-reference": false,
     "ineffective-attr": false,
     "label-has-control": false,
-    "require-accessible-name": false
+    "require-accessible-name": false,
+    "invalid-attr": false
   }
 }

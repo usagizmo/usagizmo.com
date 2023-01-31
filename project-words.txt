@@ -4,6 +4,7 @@ barocco
 citext
 dirents
 dropshelf
+esbuild
 gestimer
 giphy
 graphqurl

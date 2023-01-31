@@ -1,14 +1,15 @@
 <script lang="ts">
-  import { TextLink, H2, Ul, Li, BreadHeader } from 'ui';
+  import { TextLink, Ul, Li, BreadHeader } from 'ui';
   import type { PageData } from './$houdini';
-  import { notePathToRoutePath } from '$lib/utils';
+  import { notePathToRoutePath, dateToISO, dateToString } from '$lib/utils';
 
   export let data: PageData;
-  $: ({ NotesInfo } = data);
+  $: ({ NotesInfo, content } = data);
 
   $: notes = $NotesInfo.data?.mds ?? [];
   $: title = $NotesInfo.data?.current?.basename;
-  $: content = $NotesInfo.data?.current?.content;
+  $: createdAt = $NotesInfo.data?.current?.createdAt;
+  $: updatedAt = $NotesInfo.data?.current?.updatedAt;
 </script>
 
 <svelte:head>
@@ -20,7 +21,7 @@
 </svelte:head>
 
 <div class="mx-auto max-w-[792px]">
-  <nav>
+  <header class="mb-12">
     <BreadHeader
       breadcrumbs={[
         { href: '/', text: '🏠' },
@@ -28,16 +29,24 @@
       ]}
       title={title ?? 'Notes'}
     />
-  </nav>
+    {#if createdAt && updatedAt}
+      <p class="text-subtext mt-2 text-sm">
+        <span class="sr-only">Created at</span>
+        <time datetime={dateToISO(createdAt)} title={dateToISO(createdAt)}
+          >{dateToString(createdAt)}</time
+        >
+        →
+        <span class="sr-only">Updated at</span>
+        <time datetime={dateToISO(updatedAt)} title={dateToISO(updatedAt)}
+          >{dateToString(updatedAt)}</time
+        >
+      </p>
+    {/if}
+  </header>
 
   {#if title && content}
-    <main>
-      <h1>{title}</h1>
-      <section>
-        <div class="markdown">
-          {@html content}
-        </div>
-      </section>
+    <main class="markdown">
+      {@html content}
     </main>
   {/if}
 

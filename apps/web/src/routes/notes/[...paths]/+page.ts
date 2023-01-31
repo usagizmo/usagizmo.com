@@ -1,6 +1,7 @@
-import { PUBLIC_OBSIDIAN_PUBLIC_DIR } from '$env/static/public';
 import { graphql } from '$houdini';
-import type { NotesInfoVariables } from './$houdini';
+import { paramsPathToNotePath } from '$lib/utils';
+import type { NotesInfoVariables, AfterLoadEvent } from './$houdini';
+import { ContentParser } from './ContentParser';
 
 export const _houdini_load = graphql(`
   query NotesInfo($current: String!, $mdsLike: String!) {
@@ -8,23 +9,31 @@ export const _houdini_load = graphql(`
       path
       basename
       content
+      createdAt
+      updatedAt
     }
     mds: notes(where: { path: { _like: $mdsLike } }, order_by: { updatedAt: desc }) {
       path
       basename
     }
-    attachments: notes(where: { path: { _nlike: "%.md" } }) {
-      path
-    }
   }
 `);
 
 export const _NotesInfoVariables: NotesInfoVariables = ({ params }) => {
-  const current = `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/${params.paths}`;
-  const mdsLike = `${current}%.md`; // only for `notes` dir
+  const current = paramsPathToNotePath(params.paths, '.md');
+  const mdsLike = params.paths ? '' : '%.md'; // only for `notes` dir
 
   return {
     current,
     mdsLike,
+  };
+};
+
+export const _houdini_afterLoad = async ({ data }: AfterLoadEvent) => {
+  const contentParser = new ContentParser(data.NotesInfo.current?.content ?? '');
+
+  return {
+    ...data,
+    ...(await contentParser.getMetaContent()),
   };
 };
