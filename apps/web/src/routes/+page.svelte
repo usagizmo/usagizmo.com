@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TextLink, H2, H3, Ul, InlineUl } from 'ui';
+  import { TextLink, H2, H3, Ul, InlineUl, Li } from 'ui';
   import Link from './Link.svelte';
 </script>
 
@@ -7,10 +7,17 @@
   <h1 class="text-4xl font-bold">usagizmo</h1>
 
   <section class="mt-12">
-    <H2>Profile</H2>
-    <p class="mb-0.5"><strong>Web Engineer</strong></p>
+    <div class="flex items-center gap-2">
+      <H2>Profile</H2>
+    </div>
+    <p class="mb-0.5">
+      <strong>Web Engineer</strong>
+    </p>
     <p class="text-subtext">
       After working as a full stack engineer, I settled down as a front-end engineer.
+    </p>
+    <p class="mt-4">
+      <TextLink href="/notes" blank={false}>📔 Notes</TextLink>
     </p>
   </section>
 
@@ -26,8 +33,21 @@
   <section class="mt-12">
     <H3>Works</H3>
     <Ul>
-      <Link name="usagizmo.com" href="https://github.com/usagizmo/usagizmo.com/" />
-      <Link name="webapp-template" href="https://github.com/usagizmo/webapp-template" />
+      <Li>
+        <strong
+          ><TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink> x <TextLink
+            href="https://github.com/usagizmo/obsidian-nhost-sync">obsidian-nhost-sync</TextLink
+          ></strong
+        >:
+        <span class="max-md:ml-4 max-md:block">This site</span>
+      </Li>
+      <Li>
+        <strong
+          ><TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink
+          ></strong
+        >:
+        <span class="max-md:ml-4 max-md:block">Monorepo template for Web Development</span>
+      </Li>
     </Ul>
   </section>
 

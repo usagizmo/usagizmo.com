@@ -1,31 +1,27 @@
 table:
-  name: like_items
+  name: notes
   schema: public
 configuration:
   column_config:
     created_at:
       custom_name: createdAt
-    like_category_id:
-      custom_name: likeCategoryId
     updated_at:
       custom_name: updatedAt
   custom_column_names:
     created_at: createdAt
-    like_category_id: likeCategoryId
     updated_at: updatedAt
   custom_root_fields: {}
-object_relationships:
-  - name: likeCategory
-    using:
-      foreign_key_constraint_on: like_category_id
 select_permissions:
   - role: public
     permission:
       columns:
-        - like_category_id
-        - link
-        - name
+        - path
         - created_at
         - updated_at
-        - id
+        - basename
+        - extension
+        - name
+        - size
+        - content
+        - fileId
       filter: {}

@@ -1,0 +1,9 @@
+query NotesQuery {
+  mds: notes(where: { path: { _like: "%.md" } }) {
+    path
+    basename
+  }
+  attachments: notes(where: { path: { _nlike: "%.md" } }) {
+    path
+  }
+}

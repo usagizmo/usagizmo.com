@@ -1,13 +1,15 @@
+ahvu
 automerge
 barocco
 citext
+dirents
 dropshelf
 gestimer
 giphy
 graphqurl
 hasura
-hasura's
 hiragino
+histoire
 intelli
 jost
 kaku
@@ -19,9 +21,12 @@ markuplint
 markuplintrc
 meiryo
 monokai
+nextjs
 nhost
+nlike
 noblechairs
 noto
+pathtest
 pixelmator
 pnpm
 qiita
@@ -30,6 +35,7 @@ setapp
 sveltekit
 tailwindcss
 timestamptz
+turborepo
 unmarshal
 usagizmo
 waka

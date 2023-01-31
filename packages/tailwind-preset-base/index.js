@@ -18,6 +18,5 @@ module.exports = {
       'text-link': 'rgb(var(--color-text-link) / <alpha-value>)',
     },
   },
-
   plugins: [],
 };
