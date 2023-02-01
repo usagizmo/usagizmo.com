@@ -4,7 +4,7 @@
   import Link from './Link.svelte';
 </script>
 
-<div class="mx-auto max-w-[792px]">
+<div class="mx-auto max-w-prose">
   <h1 class="text-4xl font-bold">usagizmo</h1>
 
   <main>
