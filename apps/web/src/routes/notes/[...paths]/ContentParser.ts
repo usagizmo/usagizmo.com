@@ -1,4 +1,3 @@
-import matter from 'gray-matter';
 import { marked } from 'marked';
 import { NhostClient } from '@nhost/nhost-js';
 import { gql, GraphQLClient } from 'graphql-request';
@@ -12,7 +11,6 @@ import { notePathToRoutePath } from '$lib/utils';
 export class ContentParser {
   client: GraphQLClient;
   nhost: NhostClient;
-  meta: { [key: string]: unknown };
   parsedContent: string;
 
   constructor(content: string) {
@@ -22,19 +20,10 @@ export class ContentParser {
       region: PUBLIC_NHOST_REGION,
     });
 
-    const mattered = matter(content);
-    this.meta = mattered.data;
-    this.parsedContent = marked.parse(mattered.content);
+    this.parsedContent = marked.parse(content);
   }
 
-  async getMetaContent() {
-    return {
-      meta: this.meta,
-      content: await this.getContent(),
-    };
-  }
-
-  private async getContent(): Promise<string> {
+  async getContent(): Promise<string> {
     const html = this.parsedContent;
     const getWidthAttr = (width: string | undefined) => (width ? ` width="${width}"` : '');
 

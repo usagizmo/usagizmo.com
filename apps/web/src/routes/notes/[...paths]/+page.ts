@@ -39,6 +39,6 @@ export const _houdini_afterLoad = async ({ data }: AfterLoadEvent) => {
 
   return {
     ...data,
-    ...(await contentParser.getMetaContent()),
+    content: await contentParser.getContent(),
   };
 };
