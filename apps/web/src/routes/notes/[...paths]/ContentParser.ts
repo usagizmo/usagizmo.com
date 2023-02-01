@@ -56,10 +56,7 @@ export class ContentParser {
         (_, name, width) => `<video src="${fileUrlByName[name]}" ${getWidthAttr(width)} controls />`
       )
       .replaceAll('[!info]', '💡')
-      .replaceAll(
-        /(<a[^>]+?href="[^"]+?")/g,
-        '$1 class="blank" target="_blank" rel="noopener noreferrer"'
-      )
+      .replaceAll(/(<a[^>]+?href="[^"]+?")/g, '$1 target="_blank" rel="noopener noreferrer"')
       .replaceAll(/<p>([\s\S]+?)<\/p>/g, (_, text) => `<p>${text.replaceAll('\n', '<br />')}</p>`)
       .replaceAll(
         /\[\[(.+?)\]\]/g,

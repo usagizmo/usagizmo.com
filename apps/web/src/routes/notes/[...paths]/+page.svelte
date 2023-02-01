@@ -90,7 +90,7 @@
     @apply underline;
   }
 
-  .markdown a.blank::after {
+  .markdown a[target='_blank']::after {
     @apply ml-1 mr-0.5 content-[url('/images/external-link.svg')];
   }
 
