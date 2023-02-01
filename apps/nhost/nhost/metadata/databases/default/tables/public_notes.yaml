@@ -15,13 +15,13 @@ select_permissions:
   - role: public
     permission:
       columns:
-        - path
+        - basename
+        - content
         - created_at
         - updated_at
-        - basename
         - extension
         - name
+        - path
         - size
-        - content
         - fileId
       filter: {}
