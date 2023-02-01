@@ -90,6 +90,10 @@
     @apply underline;
   }
 
+  .markdown a[target='_blank']::after {
+    @apply ml-1 mr-0.5 content-[url('/images/external-link.svg')];
+  }
+
   .markdown p {
     @apply my-6;
   }
