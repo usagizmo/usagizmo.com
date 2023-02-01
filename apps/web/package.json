@@ -30,6 +30,7 @@
     "gray-matter": "^4.0.3",
     "luxon": "^3.1.1",
     "marked": "^4.2.12",
+    "path-browserify": "^1.0.1",
     "ui": "workspace:*"
   },
   "devDependencies": {

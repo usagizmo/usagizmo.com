@@ -20,13 +20,16 @@ const config: UserConfigExport = defineConfig(({ mode }) => {
       include: ['src/**/*.{test,spec}.{js,ts}'],
     },
     // To use Buffer for gray-matter
+    resolve: {
+      alias: {
+        path: 'path-browserify',
+      },
+    },
     optimizeDeps: {
       esbuildOptions: {
-        // Node.js global to browser globalThis
         define: {
           global: 'globalThis',
         },
-        // Enable esbuild polyfill plugins
         plugins: [
           NodeGlobalsPolyfillPlugin({
             buffer: true,

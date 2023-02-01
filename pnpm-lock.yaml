@@ -53,6 +53,7 @@ importers:
       houdini-svelte: ^0.20.0
       luxon: ^3.1.1
       marked: ^4.2.12
+      path-browserify: ^1.0.1
       postcss: ^8.4.20
       svelte: ^3.55.0
       svelte-check: ^3.0.1
@@ -73,6 +74,7 @@ importers:
       gray-matter: 4.0.3
       luxon: 3.2.0
       marked: 4.2.12
+      path-browserify: 1.0.1
       ui: link:../../packages/ui
     devDependencies:
       '@sveltejs/adapter-auto': 1.0.0_@sveltejs+kit@1.0.1
@@ -4924,6 +4926,10 @@ packages:
       ansi-escapes: 3.2.0
       cross-spawn: 6.0.5
     dev: true
+
+  /path-browserify/1.0.1:
+    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
+    dev: false
 
   /path-exists/4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
