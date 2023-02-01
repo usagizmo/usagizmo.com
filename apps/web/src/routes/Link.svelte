@@ -3,6 +3,7 @@
 
   export let name: string;
   export let href: string;
+  export let blank = true;
 </script>
 
-<InlineLi><TextLink {href}>{name}</TextLink></InlineLi>
+<InlineLi><TextLink {href} {blank}>{name}</TextLink></InlineLi>
