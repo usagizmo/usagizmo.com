@@ -11,10 +11,10 @@
     --color-text-link: 153 153 153;
   }
   [data-theme='dark'] {
-    --color-divider: 77 77 77;
-    --color-background: 38 38 38;
-    --color-text: 255 255 255;
-    --color-subtext: 205 205 205;
+    --color-divider: 82 82 91;
+    --color-background: 39 39 42;
+    --color-text: 250 250 250;
+    --color-subtext: 212 212 216;
     --color-text-link: 153 153 153;
   }
 }

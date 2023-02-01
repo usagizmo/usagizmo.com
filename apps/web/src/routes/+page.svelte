@@ -4,7 +4,7 @@
   import Link from './Link.svelte';
 </script>
 
-<div class="mx-auto max-w-[792px]">
+<div class="mx-auto max-w-prose">
   <h1 class="text-4xl font-bold">usagizmo</h1>
 
   <main>
@@ -18,9 +18,13 @@
       <p class="text-subtext">
         After working as a full stack engineer, I settled down as a front-end engineer.
       </p>
-      <p class="mt-4">
-        <TextLink href={`/${NOTES_DIR}`} blank={false}>📔 Notes</TextLink>
-      </p>
+
+      <div class="h-4" />
+
+      <InlineUl>
+        <Link name="📔 Notes" href={`/${NOTES_DIR}`} blank={false} />
+        <Link name="@Rabi Inc." href="https://rabi.co.jp" />
+      </InlineUl>
     </section>
 
     <section class="mt-12">
