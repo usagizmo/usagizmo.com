@@ -1,9 +1,10 @@
 <script lang="ts">
   export let href = '';
+  export let blank = true;
 </script>
 
 <a
-  target="_blank"
+  target={blank ? '_blank' : '_self'}
   rel="noopener noreferrer"
   {href}
   class="text-text-link hover:text-text group relative inline-flex overflow-hidden duration-200"
