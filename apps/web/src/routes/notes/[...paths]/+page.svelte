@@ -46,7 +46,7 @@
 
   {#if title && content}
     <main
-      class="font-inter prose prose-invert prose-a:font-normal hover:prose-a:text-rose-500 hover:prose-a:underline prose-a:no-underline prose-a:text-rose-600 prose-code:after:hidden prose-code:before:hidden prose-code:bg-zinc-700 prose-code:font-normal prose-code:mx-0.5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md prose-h1:before:content-['H1.'] prose-h2:before:content-['H2.'] prose-h3:before:content-['H3.'] prose-headings:before:-translate-x-2 prose-headings:before:absolute prose-headings:before:font-normal prose-headings:before:right-full prose-headings:before:text-zinc-700 prose-headings:relative prose-headings:font-normal prose-pre:bg-zinc-900 target-blank:prose-a:after:content-[url('/images/external-link.svg')] target-blank:prose-a:after:mx-1"
+      class="font-inter prose prose-invert prose-a:font-normal hover:prose-a:text-rose-500 hover:prose-a:underline prose-a:no-underline prose-a:text-rose-600 prose-code:after:hidden prose-code:before:hidden prose-code:bg-zinc-700 prose-code:font-normal prose-code:mx-0.5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md prose-h1:before:content-['H1.'] prose-h2:before:content-['H2.'] prose-h3:before:content-['H3.'] prose-h4:font-semibold prose-headings:before:-translate-x-2 prose-headings:before:absolute prose-headings:before:font-normal prose-headings:before:right-full prose-headings:before:text-zinc-700 prose-headings:relative prose-headings:font-normal prose-pre:bg-zinc-900 target-blank:prose-a:after:content-[url('/images/external-link.svg')] target-blank:prose-a:after:mx-1"
     >
       {@html content}
     </main>
