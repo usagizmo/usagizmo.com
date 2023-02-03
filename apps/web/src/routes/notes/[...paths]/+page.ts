@@ -34,11 +34,11 @@ export const _NotesInfoVariables: NotesInfoVariables = ({ params }) => {
   };
 };
 
-export const _houdini_afterLoad = async ({ data }: AfterLoadEvent) => {
+export const _houdini_afterLoad = async ({ data, event: { params } }: AfterLoadEvent) => {
   const contentParser = new ContentParser(data.NotesInfo.current?.content ?? '');
-
   return {
     ...data,
+    params,
     content: await contentParser.getContent(),
   };
 };

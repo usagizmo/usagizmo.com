@@ -1,25 +1,24 @@
 <script lang="ts">
-  import { TextLink, Ul, Li, BreadHeader } from 'ui';
+  import { TextLink, Ul, Li, BreadHeader, Meta } from 'ui';
   import type { PageData } from './$houdini';
   import { notePathToRoutePath, dateToISO, dateToString } from '$lib/utils';
   import { NOTES_DIR } from '$lib/const';
 
   export let data: PageData;
-  $: ({ NotesInfo, content } = data);
+  $: ({ NotesInfo, content, params } = data);
 
   $: notes = $NotesInfo.data?.mds ?? [];
   $: title = $NotesInfo.data?.current?.basename;
   $: createdAt = $NotesInfo.data?.current?.createdAt;
   $: updatedAt = $NotesInfo.data?.current?.updatedAt;
+
+  $: meta = {
+    title: title ? `${title} | 📔 - usagizmo.com` : '📔 Notes - usagizmo.com',
+    canonical: `https://usagizmo.com/${params.paths ? `${NOTES_DIR}/${params.paths}` : NOTES_DIR}`,
+  };
 </script>
 
-<svelte:head>
-  {#if title}
-    <title>{title} | 📔 Notes - usagizmo.com</title>
-  {:else}
-    <title>📔 Notes - usagizmo.com</title>
-  {/if}
-</svelte:head>
+<Meta {...meta} />
 
 <div class="mx-auto max-w-prose">
   <header class="mb-12">

@@ -1,8 +1,16 @@
 <script lang="ts">
   import { NOTES_DIR } from '$lib/const';
-  import { TextLink, H2, H3, Ul, InlineUl, Li } from 'ui';
+  import { TextLink, H2, H3, Ul, InlineUl, Li, Meta } from 'ui';
   import Link from './Link.svelte';
+
+  $: meta = {
+    type: 'website',
+    title: 'usagizmo.com',
+    canonical: 'https://usagizmo.com',
+  } as const;
 </script>
+
+<Meta {...meta} />
 
 <div class="mx-auto max-w-prose">
   <h1 class="text-4xl font-bold">usagizmo</h1>
@@ -22,7 +30,7 @@
       <div class="h-4" />
 
       <InlineUl>
-        <Link name="📔 Notes" href={`/${NOTES_DIR}`} blank={false} />
+        <Link name="📔 Notes" href="/{NOTES_DIR}" blank={false} />
         <Link name="@Rabi Inc." href="https://rabi.co.jp" />
       </InlineUl>
     </section>
