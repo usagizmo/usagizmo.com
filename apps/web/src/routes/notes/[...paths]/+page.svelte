@@ -13,8 +13,8 @@
   $: updatedAt = $NotesInfo.data?.current?.updatedAt;
 
   $: meta = {
-    title: `${title} | 📔 - usagizmo.com`,
-    canonical: `https://usagizmo.com/${NOTES_DIR}/${params.paths}`,
+    title: title ? `${title} | 📔 - usagizmo.com` : '📔 Notes - usagizmo.com',
+    canonical: `https://usagizmo.com/${params.paths ? `${NOTES_DIR}/${params.paths}` : NOTES_DIR}`,
   };
 </script>
 
