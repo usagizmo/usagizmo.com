@@ -109,9 +109,11 @@ importers:
   packages/tailwind-preset-base:
     specifiers:
       '@tailwindcss/typography': ^0.5.9
+      eslint-config-custom: workspace:*
       tailwindcss: ^3.2.4
     devDependencies:
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
+      eslint-config-custom: link:../eslint-config-custom
       tailwindcss: 3.2.4_postcss@8.4.20
 
   packages/ui:
