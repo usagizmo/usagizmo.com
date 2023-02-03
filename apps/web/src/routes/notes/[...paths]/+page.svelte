@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { TextLink, Ul, Li, BreadHeader } from 'ui';
+  import { TextLink, Ul, Li, BreadHeader, Meta } from 'ui';
   import type { PageData } from './$houdini';
   import { notePathToRoutePath, dateToISO, dateToString } from '$lib/utils';
   import { NOTES_DIR } from '$lib/const';
@@ -13,26 +13,12 @@
   $: updatedAt = $NotesInfo.data?.current?.updatedAt;
 
   $: meta = {
-    title: `${title} | 📔 Notes`,
-    description: '@usagizmo - Web Engineer',
+    title: `${title} | 📔 - usagizmo.com`,
     canonical: `https://usagizmo.com/${NOTES_DIR}/${params.paths}`,
   };
 </script>
 
-<svelte:head>
-  <title>{meta.title} - usagizmo.com</title>
-  <meta name="description" content={meta.description} />
-  <meta property="og:title" content={meta.title} />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content={meta.canonical} />
-  <meta property="og:image" content="https://usagizmo.com/images/ogp.png" />
-  <meta property="og:description" content={meta.description} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="{meta.title} - usagizmo.com" />
-  <meta name="twitter:description" content={meta.description} />
-  <meta name="twitter:image" content="https://usagizmo.com/images/ogp.png" />
-  <link rel="canonical" href={meta.canonical} />
-</svelte:head>
+<Meta {...meta} />
 
 <div class="mx-auto max-w-prose">
   <header class="mb-12">

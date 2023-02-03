@@ -1,29 +1,16 @@
 <script lang="ts">
   import { NOTES_DIR } from '$lib/const';
-  import { TextLink, H2, H3, Ul, InlineUl, Li } from 'ui';
+  import { TextLink, H2, H3, Ul, InlineUl, Li, Meta } from 'ui';
   import Link from './Link.svelte';
 
   $: meta = {
+    type: 'website',
     title: 'usagizmo.com',
-    description: '@usagizmo - Web Engineer',
     canonical: 'https://usagizmo.com',
-  };
+  } as const;
 </script>
 
-<svelte:head>
-  <title>{meta.title}</title>
-  <meta name="description" content={meta.description} />
-  <meta property="og:title" content={meta.title} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content={meta.canonical} />
-  <meta property="og:image" content="https://usagizmo.com/images/ogp.png" />
-  <meta property="og:description" content={meta.description} />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={meta.title} />
-  <meta name="twitter:description" content={meta.description} />
-  <meta name="twitter:image" content="https://usagizmo.com/images/ogp.png" />
-  <link rel="canonical" href={meta.canonical} />
-</svelte:head>
+<Meta {...meta} />
 
 <div class="mx-auto max-w-prose">
   <h1 class="text-4xl font-bold">usagizmo</h1>
