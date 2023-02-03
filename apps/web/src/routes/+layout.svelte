@@ -9,7 +9,7 @@
 <GoogleAnalytics />
 
 <div class="flex h-full flex-col">
-  <div class="flex-1 px-4 pb-24 pt-10 md:pb-28 md:pt-20">
+  <div class="flex-1 px-4 pb-24 pt-6 md:pb-28 md:pt-10">
     <slot />
   </div>
   <footer class="mt-4 p-4 text-center text-sm">
