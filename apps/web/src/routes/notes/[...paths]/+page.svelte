@@ -5,20 +5,33 @@
   import { NOTES_DIR } from '$lib/const';
 
   export let data: PageData;
-  $: ({ NotesInfo, content } = data);
+  $: ({ NotesInfo, content, params } = data);
 
   $: notes = $NotesInfo.data?.mds ?? [];
   $: title = $NotesInfo.data?.current?.basename;
   $: createdAt = $NotesInfo.data?.current?.createdAt;
   $: updatedAt = $NotesInfo.data?.current?.updatedAt;
+
+  $: meta = {
+    title: `${title} | 📔 Notes`,
+    description: '@usagizmo - Web Engineer',
+    canonical: `https://usagizmo.com/${NOTES_DIR}/${params.paths}`,
+  };
 </script>
 
 <svelte:head>
-  {#if title}
-    <title>{title} | 📔 Notes - usagizmo.com</title>
-  {:else}
-    <title>📔 Notes - usagizmo.com</title>
-  {/if}
+  <title>{meta.title} - usagizmo.com</title>
+  <meta name="description" content={meta.description} />
+  <meta property="og:title" content={meta.title} />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content={meta.canonical} />
+  <meta property="og:image" content="https://usagizmo.com/images/ogp.png" />
+  <meta property="og:description" content={meta.description} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{meta.title} - usagizmo.com" />
+  <meta name="twitter:description" content={meta.description} />
+  <meta name="twitter:image" content="https://usagizmo.com/images/ogp.png" />
+  <link rel="canonical" href={meta.canonical} />
 </svelte:head>
 
 <div class="mx-auto max-w-prose">
