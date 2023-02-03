@@ -45,7 +45,9 @@
   </header>
 
   {#if title && content}
-    <main class="markdown">
+    <main
+      class="font-inter prose prose-invert prose-a:font-normal hover:prose-a:text-rose-500 hover:prose-a:underline prose-a:no-underline prose-a:text-rose-600 prose-code:after:hidden prose-code:before:hidden prose-code:bg-zinc-700 prose-code:font-normal prose-code:mx-0.5 prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md prose-h1:before:content-['H1.'] prose-h2:before:content-['H2.'] prose-h3:before:content-['H3.'] prose-headings:before:-translate-x-2 prose-headings:before:absolute prose-headings:before:font-normal prose-headings:before:right-full prose-headings:before:text-zinc-700 prose-headings:relative prose-headings:font-normal prose-pre:bg-zinc-900 target-blank:prose-a:after:content-[url('/images/external-link.svg')] target-blank:prose-a:after:mx-1"
+    >
       {@html content}
     </main>
   {/if}
@@ -63,96 +65,3 @@
     </Ul>
   {/if}
 </div>
-
-<style global>
-  .markdown {
-    @apply leading-loose;
-  }
-
-  .markdown h1,
-  .markdown h2,
-  .markdown h3 {
-    @apply relative;
-  }
-
-  .markdown h1 {
-    @apply mt-16 mb-6 text-3xl;
-  }
-  .markdown h2 {
-    @apply relative mt-16 mb-4 text-2xl;
-  }
-  .markdown h3 {
-    @apply mt-12 mb-2 text-xl;
-  }
-  .markdown h4 {
-    @apply mt-8 mb-2 font-bold;
-  }
-  .markdown h1::before,
-  .markdown h2::before,
-  .markdown h3::before {
-    @apply absolute right-full -translate-x-2 font-normal text-zinc-700;
-  }
-  .markdown h1::before {
-    @apply content-['H1.'];
-  }
-  .markdown h2::before {
-    @apply content-['H2.'];
-  }
-  .markdown h3::before {
-    @apply content-['H3.'];
-  }
-
-  .markdown a {
-    @apply text-rose-600;
-  }
-  .markdown a:hover {
-    @apply text-rose-500 underline;
-  }
-
-  .markdown a[target='_blank']::after {
-    @apply mx-0.5 content-[url('/images/external-link.svg')];
-  }
-
-  .markdown p {
-    @apply mb-6;
-  }
-  .markdown blockquote {
-    @apply mb-6 rounded border-l-4 bg-zinc-700 px-1 py-4 pl-6 pr-4;
-  }
-  .markdown blockquote > p {
-    @apply mb-0;
-  }
-
-  .markdown pre {
-    @apply mb-6 rounded bg-zinc-700 p-4;
-  }
-
-  .markdown code {
-    @apply rounded bg-zinc-700 px-1;
-  }
-
-  .markdown li {
-    @apply pl-8;
-  }
-
-  .markdown ol,
-  .markdown ul {
-    counter-reset: list;
-  }
-
-  .markdown ol > li::before {
-    @apply absolute w-12 -translate-x-14 text-right;
-    counter-increment: list;
-    content: counters(list, '.') '.';
-  }
-  .markdown ul > li > ol > li::before {
-    content: counter(list) '.';
-  }
-  .markdown ul > li::before {
-    @apply absolute -translate-x-4 content-['・'];
-  }
-
-  .markdown li:has(input[checked]) {
-    @apply line-through opacity-50;
-  }
-</style>
