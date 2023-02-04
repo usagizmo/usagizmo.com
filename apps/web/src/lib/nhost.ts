@@ -1,8 +1,9 @@
 import { PUBLIC_NHOST_SUBDOMAIN, PUBLIC_NHOST_REGION } from '$env/static/public';
 import { NhostClient } from '@nhost/nhost-js';
-import type { UserInputs } from 'src/routes/admin/(isNotLoggedIn)/inputs';
 import { writable } from 'svelte/store';
-import { tryErrorAlertOnNhostApi } from './utils';
+import Cookies from 'js-cookie';
+import { parseSession, tryErrorAlertOnNhostApi } from './utils';
+import { NHOST_SESSION_KEY } from './const';
 
 export const nhost = new NhostClient({
   subdomain: PUBLIC_NHOST_SUBDOMAIN,
@@ -10,28 +11,46 @@ export const nhost = new NhostClient({
 });
 
 // FIXME: I don't know how to simply get User type
-export type User = NonNullable<
+export type NhostSession = NonNullable<
   Parameters<Parameters<typeof nhost.auth.onAuthStateChanged>[0]>[1]
->['user'];
+>;
+export type User = NhostSession['user'];
 
-export const isLoggedIn = writable(false);
-export const accessToken = writable<string | null>(null);
-export const user = writable<User | null>(null);
+export type Inputs = {
+  email: string;
+  password: string;
+};
+
+const session = parseSession(Cookies.get(NHOST_SESSION_KEY));
+
+export const isLoggedIn = writable(!!session);
+export const accessToken = writable<string | null>(session?.accessToken ?? null);
+export const user = writable<User | null>(session?.user ?? null);
+
+const setNhostSessionInCookie = (session: NhostSession) => {
+  const expires = new Date();
+  // Expire the cookie 60 seconds before the token expires
+  expires.setSeconds(expires.getSeconds() + session.accessTokenExpiresIn - 60);
+  Cookies.set(NHOST_SESSION_KEY, JSON.stringify(session), {
+    sameSite: 'strict',
+    expires,
+  });
+};
 
 nhost.auth.onAuthStateChanged((event, session) => {
-  let _accessToken, _user;
-
   switch (event) {
     case 'SIGNED_IN':
+      if (!session) {
+        Cookies.remove(NHOST_SESSION_KEY);
+        throw new Error('session is not defined');
+      }
+      setNhostSessionInCookie(session);
       isLoggedIn.set(true);
-      _accessToken = session?.accessToken;
-      _user = session?.user;
-      if (!_accessToken) throw new Error('accessToken is not defined');
-      if (!_user) throw new Error('user is not defined');
-      accessToken.set(_accessToken);
-      user.set(_user);
+      accessToken.set(session.accessToken);
+      user.set(session.user);
       break;
     default:
+      Cookies.remove(NHOST_SESSION_KEY);
       isLoggedIn.set(false);
       accessToken.set(null);
       user.set(null);
@@ -39,18 +58,18 @@ nhost.auth.onAuthStateChanged((event, session) => {
   }
 });
 
-export const signUp = async ({ email, password, displayName }: UserInputs) => {
-  const res = await nhost.auth.signUp({
-    email,
-    password,
-    options: {
-      displayName,
-    },
-  });
-  tryErrorAlertOnNhostApi(res);
-};
+// export const signUp = async ({ email, password, displayName }: Inputs) => {
+//   const res = await nhost.auth.signUp({
+//     email,
+//     password,
+//     options: {
+//       displayName,
+//     },
+//   });
+//   tryErrorAlertOnNhostApi(res);
+// };
 
-export const logIn = async (inputs: UserInputs) => {
+export const logIn = async (inputs: Inputs) => {
   const res = await nhost.auth.signIn(inputs);
   tryErrorAlertOnNhostApi(res);
 };

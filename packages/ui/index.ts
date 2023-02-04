@@ -8,3 +8,4 @@ export { default as Ul } from './components/Ul.svelte';
 export { default as BreadHeader } from './components/BreadHeader.svelte';
 export { default as Meta } from './components/Meta.svelte';
 export { default as C2MDates } from './components/C2MDates.svelte';
+export { default as Button } from './components/Button.svelte';

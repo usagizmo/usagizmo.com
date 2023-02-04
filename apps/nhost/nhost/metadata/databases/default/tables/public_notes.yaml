@@ -24,4 +24,22 @@ select_permissions:
         - path
         - size
         - fileId
+      filter:
+        _and:
+          - basename:
+              _nlike: draft_%
+          - content:
+              _nlike: '%private: true%'
+  - role: user
+    permission:
+      columns:
+        - size
+        - basename
+        - content
+        - extension
+        - fileId
+        - name
+        - path
+        - created_at
+        - updated_at
       filter: {}
