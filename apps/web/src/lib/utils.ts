@@ -1,10 +1,15 @@
-import { PUBLIC_OBSIDIAN_PUBLIC_AUTH_DIRS, PUBLIC_OBSIDIAN_PUBLIC_DIR } from '$env/static/public';
+import { PUBLIC_OBSIDIAN_PUBLIC_DIR } from '$env/static/public';
 import { NOTES_DIR } from './const';
+import type { NhostSession } from '$lib/nhost';
 
 export const tryErrorAlertOnNhostApi = (res: { error?: { message: string } | null }): boolean => {
   const errorMessage = res.error?.message;
   errorMessage && alert(errorMessage);
   return !!errorMessage;
+};
+
+export const parseSession = (cookiesSession: string | undefined): NhostSession | null => {
+  return cookiesSession ? JSON.parse(cookiesSession) : null;
 };
 
 export const notePathToRoutePath = (notePath: string) => {
@@ -18,12 +23,4 @@ export const paramsPathToRoutePath = (paramsPath: string) => {
 
 export const paramsPathToNotePath = (paramsPath: string, extension: string | null) => {
   return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/${paramsPath}${extension ?? ''}`;
-};
-
-export const getMdsAuthDraftNSimilar = () => {
-  const draftPrefix = 'draft_';
-  const pipedAuthDirs = PUBLIC_OBSIDIAN_PUBLIC_AUTH_DIRS.split(',')
-    .map((authDir) => authDir.split('=')[0])
-    .join('|');
-  return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/(${draftPrefix}|${pipedAuthDirs})%.md`;
 };
