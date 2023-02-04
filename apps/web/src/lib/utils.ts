@@ -26,15 +26,3 @@ export const getMdsAuthNSimilar = () => {
     .join('|');
   return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/(${pipedAuthDirs})/%.md`;
 };
-
-export const dateToISO = (date?: Date): string => {
-  return date?.toISOString() ?? '';
-};
-
-export const dateToString = (date?: Date): string => {
-  if (!date) return '';
-  const y = date.getFullYear();
-  const m = date.getMonth() + 1;
-  const d = date.getDate();
-  return y === new Date().getFullYear() ? `${m}/${d}` : `${m}/${d}/${y}`;
-};

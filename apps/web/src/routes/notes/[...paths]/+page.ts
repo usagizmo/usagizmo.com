@@ -1,10 +1,10 @@
 import { graphql } from '$houdini';
 import { getMdsAuthNSimilar, paramsPathToNotePath } from '$lib/utils';
-import type { NotesInfoVariables, AfterLoadEvent } from './$houdini';
+import type { NotesPathsQueryVariables, AfterLoadEvent } from './$houdini';
 import { ContentParser } from './ContentParser';
 
 export const _houdini_load = graphql(`
-  query NotesInfo($current: String!, $mdsLike: String!, $mdsAuthNSimilar: String!) {
+  query NotesPathsQuery($current: String!, $mdsLike: String!, $mdsAuthNSimilar: String!) {
     current: notes_by_pk(path: $current) {
       path
       basename
@@ -18,13 +18,14 @@ export const _houdini_load = graphql(`
     ) {
       path
       basename
+      updatedAt
     }
   }
 `);
 
-export const _NotesInfoVariables: NotesInfoVariables = ({ params }) => {
+export const _NotesPathsQueryVariables: NotesPathsQueryVariables = ({ params }) => {
   const current = paramsPathToNotePath(params.paths, '.md');
-  const mdsLike = params.paths ? '' : '%.md'; // only for `/notes` dir
+  const mdsLike = params.paths ? '' : '%.md'; // `/notes` only
   const mdsAuthNSimilar = getMdsAuthNSimilar();
 
   return {
@@ -35,7 +36,7 @@ export const _NotesInfoVariables: NotesInfoVariables = ({ params }) => {
 };
 
 export const _houdini_afterLoad = async ({ data, event: { params } }: AfterLoadEvent) => {
-  const contentParser = new ContentParser(data.NotesInfo.current?.content ?? '');
+  const contentParser = new ContentParser(data.NotesPathsQuery.current?.content ?? '');
   return {
     ...data,
     params,

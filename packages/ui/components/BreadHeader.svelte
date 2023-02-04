@@ -9,7 +9,7 @@
       <li
         class="pl-4 before:relative before:-left-2 before:content-['/'] first:pl-0 first:before:hidden"
       >
-        <a {href} class="text-rose-600 hover:underline">{text}</a>
+        <a {href} class="text-text-link hover:text-text duration-150">{text}</a>
       </li>
     {/each}
   </ul>
