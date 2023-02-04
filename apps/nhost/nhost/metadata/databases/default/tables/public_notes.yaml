@@ -28,8 +28,11 @@ select_permissions:
         _and:
           - basename:
               _nlike: draft_%
-          - content:
-              _nlike: '%private: true%'
+          - _or:
+              - content:
+                  _is_null: true
+              - content:
+                  _nlike: '%private: true%'
   - role: user
     permission:
       columns:
