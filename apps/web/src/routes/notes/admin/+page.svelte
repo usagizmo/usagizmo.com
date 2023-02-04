@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Button, Meta, TextLink } from 'ui';
-  import { isLoggedIn, logIn, logOut, user, type Inputs } from '$lib/nhost';
+  import { isLoggedIn, logIn, logOut, user, type UserInputs } from '$lib/nhost';
 
-  let inputs: Inputs = {
+  let inputs: UserInputs = {
     email: '',
     password: '',
   };

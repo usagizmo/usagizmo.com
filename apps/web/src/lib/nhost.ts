@@ -16,7 +16,7 @@ export type NhostSession = NonNullable<
 >;
 export type User = NhostSession['user'];
 
-export type Inputs = {
+export type UserInputs = {
   email: string;
   password: string;
 };
@@ -69,7 +69,7 @@ nhost.auth.onAuthStateChanged((event, session) => {
 //   tryErrorAlertOnNhostApi(res);
 // };
 
-export const logIn = async (inputs: Inputs) => {
+export const logIn = async (inputs: UserInputs) => {
   const res = await nhost.auth.signIn(inputs);
   tryErrorAlertOnNhostApi(res);
 };
