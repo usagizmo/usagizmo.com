@@ -1,6 +1,7 @@
 import { marked } from 'marked';
 import { NhostClient } from '@nhost/nhost-js';
 import { gql, GraphQLClient } from 'graphql-request';
+import matter from 'front-matter';
 import {
   PUBLIC_GRAPHQL_ENDPOINT,
   PUBLIC_NHOST_REGION,
@@ -20,7 +21,8 @@ export class ContentParser {
       region: PUBLIC_NHOST_REGION,
     });
 
-    this.parsedContent = marked.parse(content);
+    const matteredContent = matter(content);
+    this.parsedContent = marked.parse(matteredContent.body);
   }
 
   async getContent(): Promise<string> {
