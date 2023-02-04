@@ -1,5 +1,5 @@
 import { graphql } from '$houdini';
-import { getMdsAuthNSimilar, paramsPathToNotePath } from '$lib/utils';
+import { getMdsAuthDraftNSimilar, paramsPathToNotePath } from '$lib/utils';
 import type { NotesPathsQueryVariables, AfterLoadEvent } from './$houdini';
 import { ContentParser } from './ContentParser';
 
@@ -26,7 +26,7 @@ export const _houdini_load = graphql(`
 export const _NotesPathsQueryVariables: NotesPathsQueryVariables = ({ params }) => {
   const current = paramsPathToNotePath(params.paths, '.md');
   const mdsLike = params.paths ? '' : '%.md'; // `/notes` only
-  const mdsAuthNSimilar = getMdsAuthNSimilar();
+  const mdsAuthNSimilar = getMdsAuthDraftNSimilar();
 
   return {
     current,

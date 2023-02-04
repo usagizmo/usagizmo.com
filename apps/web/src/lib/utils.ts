@@ -20,9 +20,10 @@ export const paramsPathToNotePath = (paramsPath: string, extension: string | nul
   return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/${paramsPath}${extension ?? ''}`;
 };
 
-export const getMdsAuthNSimilar = () => {
+export const getMdsAuthDraftNSimilar = () => {
+  const draftPrefix = 'draft_';
   const pipedAuthDirs = PUBLIC_OBSIDIAN_PUBLIC_AUTH_DIRS.split(',')
     .map((authDir) => authDir.split('=')[0])
     .join('|');
-  return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/(${pipedAuthDirs})/%.md`;
+  return `${PUBLIC_OBSIDIAN_PUBLIC_DIR}/(${draftPrefix}|${pipedAuthDirs})%.md`;
 };
