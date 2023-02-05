@@ -19,6 +19,27 @@ module.exports = {
         subtext: 'rgb(var(--color-subtext) / <alpha-value>)',
         'text-link': 'rgb(var(--color-text-link) / <alpha-value>)',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'pre > code': {
+              padding: '0 !important',
+              margin: 0,
+              color: theme('colors.zinc.100'),
+              backgroundColor: 'transparent !important',
+            },
+            'a:has(img) + br': {
+              display: 'none',
+            },
+            'p:has(img)': {
+              margin: '40px 0 !important',
+              fontSize: 15,
+              textAlign: 'center',
+              color: theme('colors.zinc.300'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
