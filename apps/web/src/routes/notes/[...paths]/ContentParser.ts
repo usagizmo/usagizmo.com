@@ -8,6 +8,7 @@ import {
   PUBLIC_NHOST_SUBDOMAIN,
 } from '$env/static/public';
 import { notePathToRoutePath } from '$lib/utils';
+import { pbMatcher } from '$lib/pbMatcher';
 
 export class ContentParser {
   client: GraphQLClient;
@@ -30,16 +31,10 @@ export class ContentParser {
     const getWidthAttr = (width: string | undefined) => (width ? ` width="${width}"` : '');
 
     const noteNames = [];
-    for (const match of html.matchAll(/!\[\[([^\]]+?(?:png|jpg|gif|webp))\|?(\d+)?\]\]/g)) {
+    for (const match of html.matchAll(pbMatcher.attachment)) {
       noteNames.push(match[1]);
     }
-    for (const match of html.matchAll(/!\[\[([^\]]+?(?:mp4))\|?(\d+)?\]\]/g)) {
-      noteNames.push(match[1]);
-    }
-    for (const match of html.matchAll(/\[\[(.+?)\]\]/g)) {
-      if (/\.(png|jpg|gif|webp|mp4)$/.test(match[1])) {
-        continue;
-      }
+    for (const match of html.matchAll(pbMatcher.md)) {
       noteNames.push(match[1] + '.md');
     }
 
@@ -47,23 +42,21 @@ export class ContentParser {
 
     return html
       .replaceAll(
-        /!\[\[([^\]]+?(?:png|jpg|gif|webp))\|?(\d+)?\]\]/g,
+        pbMatcher.image,
         (_, name, width) =>
           `<a href="${fileUrlByName[name]}" target="_blank" rel="noopener noreferrer"><img src="${
             fileUrlByName[name]
           }" ${getWidthAttr(width)} /></a>`
       )
       .replaceAll(
-        /!\[\[([^\]]+?(?:mp4))\|?(\d+)?\]\]/g,
+        pbMatcher.video,
         (_, name, width) => `<video src="${fileUrlByName[name]}" ${getWidthAttr(width)} controls />`
       )
-      .replaceAll('[!info]', '💡')
+
       .replaceAll(/(<a[^>]+?href="[^"]+?")/g, '$1 target="_blank" rel="noopener noreferrer"')
-      .replaceAll(/<p>([\s\S]+?)<\/p>/g, (_, text) => `<p>${text.replaceAll('\n', '<br />')}</p>`)
-      .replaceAll(
-        /\[\[(.+?)\]\]/g,
-        (_, name) => `<a href="${fileUrlByName[name + '.md']}">${name}</a>`
-      );
+      .replaceAll(pbMatcher.md, (_, name) => `<a href="${fileUrlByName[name + '.md']}">${name}</a>`)
+      .replaceAll('[!info]', '💡')
+      .replaceAll(/<p>([\s\S]+?)<\/p>/g, (_, text) => `<p>${text.replaceAll('\n', '<br />')}</p>`);
   }
 
   private async getFileUrlByNameByNames(names: string[]) {
