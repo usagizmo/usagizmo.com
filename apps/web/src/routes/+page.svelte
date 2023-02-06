@@ -20,7 +20,7 @@
       <div class="flex items-center gap-2">
         <H2>Profile</H2>
       </div>
-      <p class="mb-0.5">
+      <p class="mb-1">
         <strong>Web Engineer</strong>
       </p>
       <p class="text-subtext">
@@ -53,14 +53,16 @@
               href="https://github.com/usagizmo/obsidian-nhost-sync">obsidian-nhost-sync</TextLink
             ></strong
           >:
-          <span class="max-md:ml-4 max-md:block">This site</span>
+          <span class="max-md:mt-1 max-md:ml-4 max-md:block">This site</span>
         </Li>
         <Li>
           <strong
             ><TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink
             ></strong
           >:
-          <span class="max-md:ml-4 max-md:block">Monorepo template for Web Development</span>
+          <span class="max-md:mt-1 max-md:ml-4 max-md:block"
+            >Monorepo template for Web Development</span
+          >
         </Li>
       </Ul>
     </section>
