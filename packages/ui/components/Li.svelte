@@ -1,3 +1,3 @@
-<li class="py-0.5">
+<li class="py-1">
   <slot />
 </li>

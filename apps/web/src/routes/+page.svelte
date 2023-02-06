@@ -17,12 +17,9 @@
 
   <main>
     <section class="mt-12">
-      <div class="flex items-center gap-2">
-        <H2>Profile</H2>
-      </div>
-      <p class="mb-0.5">
-        <strong>Web Engineer</strong>
-      </p>
+      <H2>Profile</H2>
+
+      <H3>Web Engineer</H3>
       <p class="text-subtext">
         After working as a full stack engineer, I settled down as a front-end engineer.
       </p>
@@ -33,41 +30,35 @@
         <Link name="📔 Notes" href="/{NOTES_DIR}" blank={false} />
         <Link name="@Rabi Inc." href="https://rabi.co.jp" />
       </InlineUl>
-    </section>
 
-    <section class="mt-12">
       <H3>Loves</H3>
       <InlineUl>
         <Link name="Svelte" href="https://svelte.dev/" />
         <Link name="Obsidian" href="https://obsidian.md/" />
         <Link name="Nhost" href="https://nhost.io/" />
       </InlineUl>
-    </section>
 
-    <section class="mt-12">
       <H3>Works</H3>
       <Ul>
         <Li>
-          <strong
-            ><TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink> x <TextLink
+          <strong>
+            <TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink> x <TextLink
               href="https://github.com/usagizmo/obsidian-nhost-sync">obsidian-nhost-sync</TextLink
-            ></strong
-          >:
-          <span class="max-md:ml-4 max-md:block">This site</span>
+            >
+          </strong>:
+          <span class="max-md:mt-1 max-md:ml-4 max-md:block">This site</span>
         </Li>
         <Li>
-          <strong
-            ><TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink
-            ></strong
-          >:
-          <span class="max-md:ml-4 max-md:block">Monorepo template for Web Development</span>
+          <strong>
+            <TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink>
+          </strong>:
+          <span class="max-md:mt-1 max-md:ml-4 max-md:block"
+            >Monorepo template for Web Development</span
+          >
         </Li>
       </Ul>
-    </section>
 
-    <section class="mt-12">
       <H3>Links</H3>
-
       <p>
         <strong>Twitter</strong>: <TextLink href="https://twitter.com/usagizmo">@usagizmo</TextLink>
       </p>
