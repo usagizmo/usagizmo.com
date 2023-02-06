@@ -22,12 +22,14 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            // for pre-code
             'pre > code': {
               padding: '0 !important',
               margin: 0,
               color: theme('colors.zinc.100'),
               backgroundColor: 'transparent !important',
             },
+            // for image
             'a:has(img) + br': {
               display: 'none',
             },
@@ -36,6 +38,17 @@ module.exports = {
               fontSize: 15,
               textAlign: 'center',
               color: theme('colors.zinc.300'),
+            },
+            // for checkbox
+            'li > input[type="checkbox"]': {
+              margin: 0,
+            },
+            'li:has(input[type="checkbox"]:checked)': {
+              textDecoration: 'line-through',
+              opacity: 0.5,
+            },
+            'li li': {
+              opacity: 1,
             },
           },
         },
