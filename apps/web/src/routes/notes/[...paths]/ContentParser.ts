@@ -30,14 +30,14 @@ export class ContentParser {
     const getWidthAttr = (width: string | undefined) => (width ? ` width="${width}"` : '');
 
     const noteNames = [];
-    for (const match of html.matchAll(/!\[\[([^\]]+?(?:png|jpg))\|?(\d+)?\]\]/g)) {
+    for (const match of html.matchAll(/!\[\[([^\]]+?(?:png|jpg|gif|webp))\|?(\d+)?\]\]/g)) {
       noteNames.push(match[1]);
     }
     for (const match of html.matchAll(/!\[\[([^\]]+?(?:mp4))\|?(\d+)?\]\]/g)) {
       noteNames.push(match[1]);
     }
     for (const match of html.matchAll(/\[\[(.+?)\]\]/g)) {
-      if (match[1].endsWith('.png') || match[1].endsWith('.jpg') || match[1].endsWith('.mp4')) {
+      if (/\.(png|jpg|gif|webp|mp4)$/.test(match[1])) {
         continue;
       }
       noteNames.push(match[1] + '.md');
@@ -47,7 +47,7 @@ export class ContentParser {
 
     return html
       .replaceAll(
-        /!\[\[([^\]]+?(?:png|jpg))\|?(\d+)?\]\]/g,
+        /!\[\[([^\]]+?(?:png|jpg|gif|webp))\|?(\d+)?\]\]/g,
         (_, name, width) =>
           `<a href="${fileUrlByName[name]}" target="_blank" rel="noopener noreferrer"><img src="${
             fileUrlByName[name]
