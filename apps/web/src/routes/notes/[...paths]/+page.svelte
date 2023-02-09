@@ -35,7 +35,7 @@
       ];
       breadHeaderTitle = current?.basename ?? '';
       meta = {
-        title: `${breadHeaderTitle} | 📔 Notes - usagizmo.com`,
+        title: `${breadHeaderTitle} | 📔 - usagizmo.com`,
         canonical: `https://usagizmo.com/${NOTES_DIR}/${params.paths}`,
       };
     }
