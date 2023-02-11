@@ -90,7 +90,7 @@
           href="https://www.kensington.com/ja-jp/p/%E8%A3%BD%E5%93%81/%E3%82%B3%E3%83%B3%E3%83%88%E3%83%AD%E3%83%BC%E3%83%AB/%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB/%E3%82%A8%E3%82%AD%E3%82%B9%E3%83%91%E3%83%BC%E3%83%88%E3%83%9E%E3%82%A6%E3%82%B9-%E3%83%AF%E3%82%A4%E3%83%A4%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%BC%E3%83%AB/"
         />
         <Link name="Google Pixel" href="https://store.google.com/jp/category/phones" />
-        <Link name="MacBook Pro" href="https://www.apple.com/" />
+        <Link name="MacBook Pro" href="https://www.apple.com/macbook-pro/" />
         <Link
           name="noblechairs"
           href="https://www.noblechairs.com/en-us/icon-series/gaming-chair-pu-leather?attribute%5Bcolor%5D=White%20/%20Black"
@@ -137,7 +137,6 @@
         <Link name="Dropshelf" href="https://pilotmoon.com/dropshelf/" />
         <Link name="Figma" href="https://www.figma.com/" />
         <Link name="Gestimer" href="https://apps.apple.com/jp/app/gestimer/id990588172" />
-        <Link name="GIPHY CAPTURE" href="https://giphy.com/apps/giphycapture" />
         <Link name="Integrity plus" href="https://peacockmedia.software/mac/integrity-plus/" />
         <Link name="iTerm" href="https://iterm2.com/" />
         <Link name="Kaleidoscope" href="https://kaleidoscope.app/" />
@@ -156,8 +155,20 @@
       <H3>VS Code Extensions</H3>
       <InlineUl>
         <Link
+          name="Auto Rename Tag"
+          href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"
+        />
+        <Link
           name="Batch Rename"
           href="https://marketplace.visualstudio.com/items?itemName=JannisX11.batch-rename-extension"
+        />
+        <Link
+          name="Better Comments"
+          href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"
+        />
+        <Link
+          name="Calculator"
+          href="https://marketplace.visualstudio.com/items?itemName=lixquid.calculator"
         />
         <Link
           name="change-case"
@@ -220,8 +231,16 @@
           href="https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection"
         />
         <Link
+          name="Markdown Preview Mermaid Support"
+          href="https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid"
+        />
+        <Link
           name="Material Icon Theme"
           href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"
+        />
+        <Link
+          name="Mermaid Markdown Syntax Highlighting"
+          href="https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting"
         />
         <Link
           name="multi-command"
@@ -291,15 +310,7 @@
           name="Unique Lines"
           href="https://marketplace.visualstudio.com/items?itemName=bibhasdn.unique-lines"
         />
-        <Link
-          name="Unique Lines"
-          href="https://marketplace.visualstudio.com/items?itemName=bibhasdn.unique-lines"
-        />
         <Link name="Vim" href="https://marketplace.visualstudio.com/items?itemName=vscodevim.vim" />
-        <Link
-          name="Visual Studio IntelliCode"
-          href="https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode"
-        />
         <Link
           name="Vitest"
           href="https://marketplace.visualstudio.com/items?itemName=ZixuanChen.vitest-explorer"
