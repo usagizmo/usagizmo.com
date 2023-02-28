@@ -31,11 +31,10 @@
         <Link name="@Rabi Inc." href="https://rabi.co.jp" />
       </InlineUl>
 
-      <H3>Loves</H3>
+      <H3>Love</H3>
       <InlineUl>
         <Link name="Svelte" href="https://svelte.dev/" />
         <Link name="Obsidian" href="https://obsidian.md/" />
-        <Link name="Nhost" href="https://nhost.io/" />
       </InlineUl>
 
       <H3>Works</H3>
@@ -58,7 +57,7 @@
         </Li>
       </Ul>
 
-      <H3>Links</H3>
+      <H3>SNS</H3>
       <p>
         <strong>Twitter</strong>: <TextLink href="https://twitter.com/usagizmo">@usagizmo</TextLink>
       </p>
