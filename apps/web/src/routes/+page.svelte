@@ -77,8 +77,8 @@
       <H3>Devices</H3>
       <InlineUl>
         <Link
-          name="BAROCCO MD770"
-          href="https://archisite.co.jp/products/mistel/barocco-md770-rgb-bt/"
+          name="Keychron Q11"
+          href="https://www.keychron.com/products/keychron-q11-qmk-custom-mechanical-keyboard"
         />
         <Link
           name="Dell U4021QW"
