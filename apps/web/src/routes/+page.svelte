@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { NOTES_DIR } from '$lib/const';
   import { TextLink, H2, H3, Ul, InlineUl, Li, Meta } from 'ui';
   import Link from './Link.svelte';
 
@@ -27,7 +26,6 @@
       <div class="h-4" />
 
       <InlineUl>
-        <Link name="📔 Notes" href="/{NOTES_DIR}" blank={false} />
         <Link name="@Rabi Inc." href="https://rabi.co.jp" />
       </InlineUl>
 
@@ -39,14 +37,6 @@
 
       <H3>Works</H3>
       <Ul>
-        <Li>
-          <strong>
-            <TextLink href="https://github.com/usagizmo/usagizmo.com/">usagizmo.com</TextLink> x <TextLink
-              href="https://github.com/usagizmo/obsidian-nhost-sync">obsidian-nhost-sync</TextLink
-            >
-          </strong>:
-          <span class="max-md:mt-1 max-md:ml-4 max-md:block">This site</span>
-        </Li>
         <Li>
           <strong>
             <TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink>
