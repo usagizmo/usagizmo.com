@@ -1,20 +1,9 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import houdini from 'houdini/vite';
-import { defineConfig, loadEnv, type UserConfigExport } from 'vite';
+import { defineConfig, type UserConfigExport } from 'vite';
 
-const config: UserConfigExport = defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '');
-
+const config: UserConfigExport = defineConfig(() => {
   return {
-    plugins: [
-      houdini({
-        apiUrl: env.PUBLIC_GRAPHQL_ENDPOINT,
-        schemaPollHeaders: {
-          'x-hasura-admin-secret': env.HASURA_ADMIN_SECRET,
-        },
-      }),
-      sveltekit(),
-    ],
+    plugins: [sveltekit()],
     test: {
       include: ['src/**/*.{test,spec}.{js,ts}'],
     },

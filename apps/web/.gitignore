@@ -8,5 +8,3 @@ node_modules
 !.env.example
 
 # custom
-$houdini
-schema.graphql

@@ -14,8 +14,3 @@ package-lock.json
 yarn.lock
 
 # custom
-/apps/nhost/.nhost/
-/apps/nhost/nhost/*
-!/apps/nhost/nhost/emails/
-/apps/web/$houdini/
-/apps/web/schema.graphql

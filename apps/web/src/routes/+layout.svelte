@@ -1,6 +1,5 @@
 <script lang="ts">
   import 'tailwind-preset-base/global.css';
-  import '$lib/nhost'; // initialize nhost
 
   import GoogleAnalytics from './GoogleAnalytics.svelte';
   import TextLink from 'ui/components/TextLink.svelte';

@@ -24,7 +24,6 @@ markuplintrc
 meiryo
 monokai
 nextjs
-nhost
 nlike
 noblechairs
 noopener

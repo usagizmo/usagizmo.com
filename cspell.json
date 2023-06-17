@@ -15,9 +15,6 @@
     // custom
     "*.svg",
     "/.vscode/",
-    "/apps/nhost/nhost/",
-    "/apps/web/$houdini/",
-    "/apps/web/schema.graphql",
     "/pnpm-lock.yaml"
   ]
 }
