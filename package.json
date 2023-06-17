@@ -1,6 +1,6 @@
 {
-  "name": "webapp-template",
-  "version": "1.3.4",
+  "name": "usagizmo.com",
+  "version": "1.7.0",
   "private": true,
   "type": "module",
   "scripts": {
