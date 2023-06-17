@@ -36,6 +36,7 @@ pnpm
 qiita
 raycast
 setapp
+soulver
 sveltekit
 tailwindcss
 timestamptz

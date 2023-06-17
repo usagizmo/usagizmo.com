@@ -32,6 +32,7 @@
       <H3>Love</H3>
       <InlineUl>
         <Link name="Svelte" href="https://svelte.dev/" />
+        <Link name="Tailwind CSS" href="https://tailwindcss.com/" />
         <Link name="Obsidian" href="https://obsidian.md/" />
       </InlineUl>
 
@@ -41,7 +42,7 @@
           <strong>
             <TextLink href="https://github.com/usagizmo/webapp-template">webapp-template</TextLink>
           </strong>:
-          <span class="max-md:mt-1 max-md:ml-4 max-md:block"
+          <span class="max-md:ml-4 max-md:mt-1 max-md:block"
             >Monorepo template for Web Development</span
           >
         </Li>
@@ -100,26 +101,21 @@
         <Link name="Magic Window Air" href="https://www.jetsoncreative.com/aerial" />
         <Link name="Marked" href="https://marked2app.com/" />
         <Link name="MetaImage" href="https://neededapps.com/metaimage/" />
+        <Link name="Mission Control Plus" href="https://www.fadel.io/missioncontrolplus" />
         <Link name="Paste" href="https://pasteapp.io/" />
         <Link name="RapidAPI" href="https://paw.cloud/" />
         <Link name="SnippetsLab" href="https://www.renfei.org/snippets-lab/" />
+        <Link name="Soulver" href="https://soulver.app/" />
         <Link name="Timing" href="https://timingapp.com/" />
-        <Link name="Typeface" href="https://typefaceapp.com/" />
         <Link name="WiFi Explorer" href="https://www.intuitibits.com/products/wifiexplorer/" />
       </InlineUl>
 
       <H3>Apps</H3>
       <InlineUl>
         <Link name="1Password" href="https://1password.com/" />
-        <Link name="Better Rename" href="https://www.publicspace.net/BetterRename/" />
         <Link name="Boxy SVG" href="https://boxy-svg.com/" />
-        <Link name="ClickUp" href="https://clickup.com/" />
         <Link name="CotEditor" href="https://coteditor.com/" />
         <Link name="DaisyDisk" href="https://daisydiskapp.com/" />
-        <Link
-          name="DaVinci Resolve"
-          href="https://www.blackmagicdesign.com/products/davinciresolve"
-        />
         <Link name="DeepL" href="https://www.deepl.com/translator" />
         <Link name="Display Menu" href="http://displaymenu.milchimgemuesefach.de/" />
         <Link name="Dropbox" href="https://www.dropbox.com/" />
@@ -132,8 +128,10 @@
         <Link name="Karabiner-Elements" href="https://karabiner-elements.pqrs.org/" />
         <Link name="Keka" href="https://www.keka.io/" />
         <Link name="Notion" href="https://www.notion.so/" />
+        <Link name="Obsidian" href="https://obsidian.md/" />
         <Link name="Pixelmator Pro" href="https://www.pixelmator.com/pro/" />
         <Link name="Raycast" href="https://www.raycast.com/" />
+        <Link name="Setapp" href="https://setapp.com/" />
         <Link name="Sidekick" href="https://www.meetsidekick.com/" />
         <Link name="Spark" href="https://sparkmailapp.com/" />
         <Link name="Sublime Merge" href="https://www.sublimemerge.com/" />
@@ -154,6 +152,10 @@
         <Link
           name="Better Comments"
           href="https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments"
+        />
+        <Link
+          name="Bookmarks"
+          href="https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks"
         />
         <Link
           name="Calculator"
@@ -212,10 +214,6 @@
           href="https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview"
         />
         <Link
-          name="Import Cost"
-          href="https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost"
-        />
-        <Link
           name="Increment Selection"
           href="https://marketplace.visualstudio.com/items?itemName=albymor.increment-selection"
         />
@@ -258,6 +256,10 @@
         <Link
           name="Prettier - Code formatter"
           href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+        />
+        <Link
+          name="quickOpenSelection"
+          href="https://marketplace.visualstudio.com/items?itemName=finico.quickOpenSelection"
         />
         <Link
           name="Rainbow CSV"
@@ -307,10 +309,6 @@
         <Link
           name="vscode-input-sequence"
           href="https://marketplace.visualstudio.com/items?itemName=tomoki1207.vscode-input-sequence"
-        />
-        <Link
-          name="WakaTime"
-          href="https://marketplace.visualstudio.com/items?itemName=WakaTime.vscode-wakatime"
         />
         <Link
           name="webhint"
