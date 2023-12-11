@@ -46,6 +46,12 @@
             >Monorepo template for Web Development</span
           >
         </Li>
+        <Li>
+          <strong>
+            <TextLink href="https://github.com/usagizmo/usagizmo.com">usagizmo.com</TextLink>
+          </strong>:
+          <span class="max-md:ml-4 max-md:mt-1 max-md:block">This site</span>
+        </Li>
       </Ul>
 
       <H3>SNS</H3>
