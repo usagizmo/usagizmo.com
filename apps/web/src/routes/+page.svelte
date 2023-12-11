@@ -46,6 +46,12 @@
             >Monorepo template for Web Development</span
           >
         </Li>
+        <Li>
+          <strong>
+            <TextLink href="https://github.com/usagizmo/usagizmo.com">usagizmo.com</TextLink>
+          </strong>:
+          <span class="max-md:ml-4 max-md:mt-1 max-md:block">This site</span>
+        </Li>
       </Ul>
 
       <H3>SNS</H3>
@@ -86,7 +92,7 @@
           href="https://www.noblechairs.com/en-us/icon-series/gaming-chair-pu-leather?attribute%5Bcolor%5D=White%20/%20Black"
         />
         <Link name="OpenRun Pro" href="https://jp.shokz.com/products/openrun-pro" />
-        <Link name="Stream Deck XL" href="https://www.elgato.com/ja/gaming/stream-deck-xl" />
+        <Link name="Loupedeck Live" href="https://loupedeck.com/jp/products/loupedeck-live/" />
       </InlineUl>
 
       <H3>Setapp</H3>
@@ -97,15 +103,16 @@
         <Link name="Dash" href="https://kapeli.com/dash" />
         <Link name="DevUtils" href="https://devutils.app/" />
         <Link name="ForkLift" href="https://binarynights.com/" />
-        <Link name="iStat Menus" href="https://bjango.com/mac/istatmenus/" />
         <Link name="Magic Window Air" href="https://www.jetsoncreative.com/aerial" />
         <Link name="Marked" href="https://marked2app.com/" />
         <Link name="MetaImage" href="https://neededapps.com/metaimage/" />
         <Link name="Mission Control Plus" href="https://www.fadel.io/missioncontrolplus" />
         <Link name="Paste" href="https://pasteapp.io/" />
         <Link name="RapidAPI" href="https://paw.cloud/" />
+        <Link name="Session" href="https://www.stayinsession.com/" />
         <Link name="SnippetsLab" href="https://www.renfei.org/snippets-lab/" />
         <Link name="Soulver" href="https://soulver.app/" />
+        <Link name="Spark" href="https://sparkmailapp.com/" />
         <Link name="Timing" href="https://timingapp.com/" />
         <Link name="WiFi Explorer" href="https://www.intuitibits.com/products/wifiexplorer/" />
       </InlineUl>
@@ -115,6 +122,7 @@
         <Link name="1Password" href="https://1password.com/" />
         <Link name="Boxy SVG" href="https://boxy-svg.com/" />
         <Link name="CotEditor" href="https://coteditor.com/" />
+        <Link name="Cursor" href="https://cursor.sh/" />
         <Link name="DaisyDisk" href="https://daisydiskapp.com/" />
         <Link name="DeepL" href="https://www.deepl.com/translator" />
         <Link name="Display Menu" href="http://displaymenu.milchimgemuesefach.de/" />
@@ -133,9 +141,9 @@
         <Link name="Raycast" href="https://www.raycast.com/" />
         <Link name="Setapp" href="https://setapp.com/" />
         <Link name="Sidekick" href="https://www.meetsidekick.com/" />
-        <Link name="Spark" href="https://sparkmailapp.com/" />
         <Link name="Sublime Merge" href="https://www.sublimemerge.com/" />
         <Link name="Sublime Text" href="https://www.sublimetext.com/" />
+        <Link name="Todoist" href="https://todoist.com/" />
         <Link name="Visual Studio Code" href="https://code.visualstudio.com/" />
       </InlineUl>
 
