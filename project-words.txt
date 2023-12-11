@@ -17,6 +17,7 @@ kaku
 karabiner
 keka
 keychron
+loupedeck
 lucida
 luxon
 markuplint
