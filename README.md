@@ -1,6 +1,3 @@
 # usagizmo.com
 
-https://usagizmo.com
-
-- **use**: [SvelteKit](https://kit.svelte.jp/)
-- **author**: [@usagizmo](https://twitter.com/usagizmo)
+This is a site that uses [Obsidian Publish](https://obsidian.md/publish) to create pages and redirects using `vercel.json`.
