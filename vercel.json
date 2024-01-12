@@ -1,24 +1,16 @@
 {
   "rewrites": [
     {
+      "source": "/:path*/",
+      "destination": "/:path*"
+    },
+    {
       "source": "/",
       "destination": "https://publish.obsidian.md/serve?url=usagizmo.com"
     },
     {
-      "source": "/articles/",
-      "destination": "https://publish.obsidian.md/serve?url=usagizmo.com/articles"
-    },
-    {
-      "source": "/articles/:path*",
-      "destination": "https://publish.obsidian.md/serve?url=usagizmo.com/articles/:path*"
-    },
-    {
-      "source": "/notes/",
-      "destination": "https://publish.obsidian.md/serve?url=usagizmo.com/notes"
-    },
-    {
-      "source": "/notes/:path*",
-      "destination": "https://publish.obsidian.md/serve?url=usagizmo.com/notes/:path*"
+      "source": "/:path*",
+      "destination": "https://publish.obsidian.md/serve?url=usagizmo.com/:path*"
     }
   ]
 }
